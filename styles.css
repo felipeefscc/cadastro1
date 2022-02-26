@@ -1,0 +1,162 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, #00b89d, #057e6c);
+    
+}
+
+.box{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    width: 25%;
+}
+
+.logo{
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+fieldset{
+    border: 3px solid  #ff9700, 0.5;
+    margin-top: 1.5rem;
+    
+}
+
+legend{
+    border: 1px solid #ff9700;
+    padding: 10px;
+    text-align: center;
+    background-color: #ff9700;
+    border-radius: 8px;
+}
+
+.inputBox{
+    position: relative;
+}
+
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.labelinput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputUser:focus ~ .labelinput, 
+.inputUser:valid ~ .labelinput{
+    top: -70%;
+    font-size: 12px;
+    color: #f4972f;
+}
+
+#data_nascimento{
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 13px;
+}
+
+#planos{
+    border: none;
+    padding: 0.4rem 0.5rem;
+    border-radius: 10px;
+    outline: none;
+    font-size: 13px;
+}
+
+#submit{
+    background-color: #f4972f;
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#submit:hover{
+    background-color: #ff8800;
+}
+
+
+
+@media screen and (max-width: 1400px){
+
+    .body{
+        height: 120vh;
+    }
+
+    .box{
+        width: 35%;
+        top: 80%;
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+
+    .box{
+        width: 60%;
+        top: 70%;
+        margin-bottom: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 1000px){
+
+
+    .box{
+        width: 65%;
+        top: 70%;
+    }
+}
+
+@media screen and (max-width: 900px){
+
+    .box{
+        width: 80%;
+        top: 70%
+    }
+
+
+}
+
+@media screen and (max-width: 700px){
+
+        .box{
+            width: 80%;
+            top: 70%
+        }
+
+
+}
+@media screen and (max-width: 400px){
+
+    .box{
+        width: 90%;
+        top: 75%
+    }
+
+
+}
