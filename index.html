@@ -1,4 +1,57 @@
+<?php
 
+    if(isset($_POST['submit']))
+    {
+        //print_r('Nome: ' . $_POST['nome']);
+        //print_r('<br>');
+        //print_r('CPF: ' . $_POST['cpf']);
+        //print_r('<br>');
+        //print_r('RG: ' . $_POST['rg']);
+        //print_r('<br>');
+        //print_r('Email: ' . $_POST['email']);
+        //print_r('<br>');
+        //print_r('Telefone: ' . $_POST['phone']);
+        //print_r('<br>');
+        //print_r('Telefone1: ' . $_POST['phone1']);
+        //print_r('<br>');
+        //print_r('Sexo:: ' . $_POST['genero']);
+        //print_r('<br>');
+        //print_r('Planos: ' . $_POST['planos']);
+        //print_r('<br>');
+        //print_r('Data de Nascimento: ' . $_POST['data_nascimento']);
+        //print_r('<br>');
+        //print_r('Endereço: ' . $_POST['endereco']);
+        //print_r('<br>');
+        //print_r('Número: ' . $_POST['numero']);
+        //print_r('<br>');
+        //print_r('Bairro: ' . $_POST['bairro']);
+        //print_r('<br>');
+        //print_r('CEP: ' . $_POST['cep']);
+        //print_r('<br>');
+        //print_r('Complemento: ' . $_POST['complemento']);
+
+       include_once('config.php');
+
+        $nome = $_POST['nome'];
+        $cpf = $_POST['cpf'];
+        $rg = $_POST['rg'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $phone1 = $_POST['phone1'];
+        $genero = $_POST['genero'];
+        $planos = $_POST['planos'];
+        $vencimento = $_POST['vencimento'];
+        $data_nascimento = $_POST['data_nascimento'];
+        $endereco = $_POST['endereco'];
+        $numero = $_POST['numero'];
+        $bairro = $_POST['bairro'];
+        $cep = $_POST['cep'];
+        $complemento = $_POST['complemento'];
+
+        $result = mysqli_query($conexao, "INSERT INTO cadastro(nome,cpf,rg,email,phone,phone1,genero,planos,vencimento,data_nascimento,endereco,numero,bairro,cep,complemento,data_cadastro) 
+        VALUES ('$nome','$cpf','$rg','$email','$phone','$phone1','$genero','$planos','$vencimento','$data_nascimento','$endereco','$numero','$bairro','$cep','$complemento',NOW())");
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,32 +76,32 @@
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelinput">Nome Completo</label>
+                    <label for="nome" class="labelinput">Nome Completo:</label>
                 </div>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelinput">CPF</label>
+                    <input type="text" name="cpf" id="cpf" class="inputUser" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+                    <label for="cpf" class="labelinput">CPF:</label>
                 </div>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelinput">RG</label>
+                    <input type="text" name="rg" id="rg" class="inputUser" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+                    <label for="rg" class="labelinput">RG:</label>
                 </div>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="nome" class="labelinput">Email</label>
+                    <label for="nome" class="labelinput">Email:</label>
                 </div>
                 <br>
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                    <label for="nome" class="labelinput">Telefone</label>
+                    <input type="tel" name="phone" id="phone" class="inputUser" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+                    <label for="phone" class="labelinput">Telefone:</label>
                 </div>
                 <br>
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                    <label for="nome" class="labelinput">Telefone 2</label>
+                    <input type="tel" name="phone1" id="phone1" class="inputUser" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+                    <label for="phone1" class="labelinput">Telefone 2:</label>
                 </div>
 
                 <p>Sexo:</p>
@@ -56,7 +109,7 @@
                     <label for="masculino">Masculino</label>
                     <input type="radio" id="feminino" name="genero" value="feminino" required>
                     <label for="feminino">Feminino</label>
-
+                   
                     <br><br><br>
                     <label for="planos"><b>Planos Fibra Optica:</b></label>
                     <select id="planos" name="planos">
@@ -67,39 +120,57 @@
                         <option value="300MB">300MB - R$99,90</option>
                         <option value="500MB">500MB - R$129,90</option>
                     </select>
+                    <br>
+                <p>Vencimento:</p>
+                    <input type="radio" id="vencimento" name="vencimento" value="05" required>
+                    <label for="05">05</label>
+
+                    <input type="radio" id="vencimento" name="vencimento" value="10" required>
+                    <label for="10">10</label>
+
+                    <input type="radio" id="vencimento" name="vencimento" value="15" required>
+                    <label for="15">15</label>
+
+                    <input type="radio" id="vencimento" name="vencimento" value="20" required>
+                    <label for="20">20</label>
+
+                    <input type="radio" id="vencimento" name="vencimento" value="25" required>
+                    <label for="25">25</label>
+                    
+                    <input type="radio" id="vencimento" name="vencimento" value="30" required>
+                    <label for="30">30</label>
+
                     <br><br><br>
                     <label for="data_nascimento"><b>Data de Nascimento:</b></label>
                     <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br><br><br>
                 <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
-                    <label for="cidade" class="labelinput">Endereço</label>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" required>
-                    <label for="estado" class="labelinput">Número</label>
-                </div>
-                <br>
-                <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" required>
-                    <label for="estado" class="labelinput">Bairro</label>
-                </div>
-                <br>
-                <div class="inputBox">
                     <input type="text" name="endereco" id="endereco" class="inputUser" required>
-                    <label for="endereco" class="labelinput">CEP</label>
+                    <label for="endereco" class="labelinput">Endereço:</label>
                 </div>
                 <br>
                 <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
-                    <label for="endereco" class="labelinput">Complemento</label>
+                    <input type="text" name="numero" id="numero" class="inputUser" required>
+                    <label for="numero" class="labelinput">Número:</label>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="bairro" id="bairro" class="inputUser" required>
+                    <label for="bairro" class="labelinput">Bairro:</label>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="cep" id="cep" class="inputUser" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+                    <label for="cep" class="labelinput">CEP:</label>
+                </div>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="complemento" id="complemento" class="inputUser" required>
+                    <label for="complemento" class="labelinput">Complemento:</label>
                 </div>
                 <br>
                 <input type="submit" name="submit" id="submit">
-                
-
-            </fieldset>
+          </fieldset>
         </form>
     </div>
   
