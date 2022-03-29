@@ -1,0 +1,13 @@
+<input type="radio" id="feminino" name="genero" value="feminino" required>
+                    <label for="feminino">20mb</label>
+                    <input type="radio" id="feminino" name="genero" value="feminino" required>
+                    <label for="feminino">35MB</label>
+                    <input type="radio" id="feminino" name="genero" value="feminino" required>
+                    <label for="feminino">50MB</label>
+                    <br><br>
+                    <input type="radio" id="masculino" name="genero" value="masculino" required>
+                    <label for="masculino">100MB</label>
+                    <input type="radio" id="outro" name="genero" value="outro" required>
+                    <label for="outro">300MB</label>
+                    <input type="radio" id="outro" name="genero" value="outro" required>
+                    <label for="outro">500MB</label>
