@@ -1,23 +1,30 @@
+html{
+    height: 100%;
+    min-height: 100%;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-image: linear-gradient(to right, #00b89d, #057e6c);
-    height: 110vh;
-    
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .box{
     color: white;
     position: absolute;
-    top: 45%;
     left: 50%;
+    top: 50%;
+    width: 20%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.6);
     padding: 15px;
     border-radius: 15px;
-    width: 25%;
-    
-    
+    margin-top: 0rem;
+    margin-bottom: 5rem;
 }
+
 
 .logo{
     text-align: center;
@@ -115,75 +122,46 @@ p {
     font-weight: bold;
 }
 
+footer{
+    margin-top: auto;
 
-@media screen and (max-width: 1500px){
-
-    
-
-    .box{
-        width: 50%;
-        top: 55%;
-        
-    }
-
-}
-
-@media screen and (max-width: 1200px){
-
-    .box{
-        width: 35%;
-        top: 55%;
-       
-    }
-
-}
-
-@media screen and (max-width: 1000px){
-
-
-    .box{
-        width: 40%;
-        top: 55%;
-    }
 }
 
 @media screen and (max-width: 900px){
 
     .box{
+        top: 50%;
         width: 50%;
-        top: 55%;
-    }
-
-
+        margin-bottom: 20px;
+    } 
 }
 
-@media screen and (max-width: 700px){
-
-        .box{
-            width: 65%;
-            top: 55%;
-        }
-
-
-}
-@media screen and (max-width: 500px){
+@media screen and (max-height: 900px){
 
     .box{
-        width: 80%;
         top: 60%;
-    }
+        width: 30%;
+        margin-bottom: 20px;
+    } 
+}
 
+@media screen and (max-width: 600px){
 
+    .box{
+        top: 60%;
+        width: 80%;
+        margin-bottom: 20px;
+    } 
 }
 
 @media screen and (max-width: 400px){
 
     .box{
+        top: 70%;
         width: 80%;
-        top: 65%;
-        margin-top: 2rem;
-       
-    }
-
-
+        margin-bottom: 20px;
+    } 
 }
+
+
+
